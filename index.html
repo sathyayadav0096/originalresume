@@ -44,20 +44,21 @@
         }
         
         .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 4px solid #3498db;
-            margin: 0 auto 20px;
-        }
-        
-        .profile-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #3498db;
+    margin: 0 auto 20px;
+}
+
+.profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* fills the circle properly */
+    display: block;
+}
+
         
         .name {
             font-size: 28px;
@@ -185,9 +186,10 @@
     <div class="resume-container">
         <div class="left-column">
             <!-- Profile Image -->
-            <div class="profile-img">
-                <img src="https://drive.google.com/uc?export=view&id=1H0ELSpFAmeFlemkY169s80XL22etcrJr" alt="Profile Photo">
-            </div>
+           <div class="profile-img">
+    <img src="https://drive.google.com/uc?export=view&id=1H0ELSpFAmeFlemkY169s80XL22etcrJr" alt="Profile Photo">
+</div>
+
 
             <h1 class="name">MEKALA SATYA NARAYANA</h1>
             <div class="title">FLUTTER DEVELOPER</div>
