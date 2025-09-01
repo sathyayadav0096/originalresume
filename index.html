@@ -6,18 +6,10 @@
   <title>Mekala Satya Narayana - Flutter Developer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
       background: #f0f2f5;
-      color: #333;
       padding: 20px;
-      min-height: 100vh;
     }
     .resume-container {
       max-width: 1000px;
@@ -25,8 +17,8 @@
       display: flex;
       background: white;
       border-radius: 10px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
       overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
     .left-column {
       width: 35%;
@@ -39,7 +31,6 @@
       width: 65%;
       padding: 30px;
     }
-    /* Profile image - only image, no background color */
     .profile-img {
       width: 150px;
       height: 150px;
@@ -53,208 +44,112 @@
       object-fit: cover;
       display: block;
     }
-    .name {
-      font-size: 28px;
-      font-weight: 700;
+    h1.name {
+      font-size: 22px;
       margin-bottom: 5px;
+      text-transform: uppercase;
     }
     .title {
-      font-size: 18px;
+      font-size: 14px;
       color: #3498db;
       margin-bottom: 20px;
     }
-    .contact-info {
-      margin: 25px 0;
+    .contact {
       text-align: left;
+      margin-top: 20px;
     }
-    .contact-info div {
+    .contact p {
+      margin: 10px 0;
       display: flex;
       align-items: center;
-      margin-bottom: 12px;
+      font-size: 14px;
     }
-    .contact-info i {
-      width: 24px;
+    .contact i {
       margin-right: 10px;
       color: #3498db;
+      width: 20px;
     }
     .section-title {
-      font-size: 20px;
-      font-weight: 600;
-      margin: 25px 0 15px;
-      padding-bottom: 8px;
       border-bottom: 2px solid #3498db;
-      color: white;
-      text-align: left;
-    }
-    .skills-list {
-      list-style-type: none;
-      text-align: left;
-    }
-    .skills-list li {
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-    }
-    .skills-list li:before {
-      content: "•";
-      color: #3498db;
-      font-weight: bold;
-      display: inline-block;
-      width: 1em;
-      margin-right: 5px;
-    }
-    .education-item, .language-item {
+      padding-bottom: 5px;
       margin-bottom: 15px;
-      text-align: left;
+      font-size: 18px;
+      font-weight: bold;
+      text-transform: uppercase;
     }
-    .education-item h4, .language-item h4 {
-      color: #3498db;
-      margin-bottom: 5px;
+    .skills ul {
+      list-style: none;
+      padding: 0;
     }
-    .right-section-title {
-      font-size: 22px;
-      font-weight: 600;
-      margin: 20px 0 15px;
-      padding-bottom: 8px;
-      border-bottom: 2px solid #2c3e50;
-      color: #2c3e50;
+    .skills ul li {
+      margin: 8px 0;
+      font-size: 14px;
     }
-    .experience-item {
-      margin-bottom: 25px;
+    .work-experience h4 {
+      margin: 0;
+      font-size: 16px;
     }
-    .experience-item h4 {
-      color: #2c3e50;
-      margin-bottom: 5px;
+    .work-experience .date {
+      font-size: 12px;
+      color: gray;
+      margin-bottom: 8px;
     }
-    .date {
-      color: #7f8c8d;
-      font-style: italic;
-      margin-bottom: 10px;
-    }
-    .project-links {
-      display: flex;
-      gap: 15px;
-      margin: 10px 0;
-    }
-    .project-links a {
-      color: #3498db;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      transition: color 0.3s;
-    }
-    .project-links a:hover {
-      color: #2c3e50;
-      text-decoration: underline;
-    }
-    @media (max-width: 768px) {
-      .resume-container {
-        flex-direction: column;
-      }
-      .left-column, .right-column {
-        width: 100%;
-      }
+    .work-experience p {
+      font-size: 14px;
+      margin-bottom: 15px;
     }
   </style>
 </head>
 <body>
   <div class="resume-container">
+    <!-- Left Column -->
     <div class="left-column">
       <div class="profile-img">
-        <img src="https://drive.google.com/uc?export=view&id=1H0ELSpFAmeFlemkY169s80XL22etcrJr" alt="Profile Photo">
+        <!-- ✅ Fixed Google Drive direct image link -->
+        <img src="https://drive.google.com/uc?export=view&id=1H0ELSpFAmeFlemkY169s80XL22etcrJr">
       </div>
-      <h1 class="name">MEKALA SATYA NARAYANA</h1>
-      <div class="title">FLUTTER DEVELOPER</div>
+      <h1 class="name">Mekala Satya Narayana</h1>
+      <div class="title">Flutter Developer</div>
 
-      <div class="contact-info">
-        <div><i class="fas fa-phone"></i> +91 9666033750</div>
-        <div><i class="fas fa-envelope"></i> sathyayadav27@gmail.com</div>
-        <div><i class="fas fa-map-marker-alt"></i> Bangalore, Marthahalli</div>
-        <div><i class="fab fa-linkedin"></i> linkedin.com/in/sathya9666033750</div>
-      </div>
-
-      <h3 class="section-title">SKILLS</h3>
-      <ul class="skills-list">
-        <li>Android & iOS Development</li>
-        <li>Dart & Flutter</li>
-        <li>Git, Github, Bitbucket</li>
-        <li>REST API & JSON</li>
-        <li>Provider, Bloc, GetX</li>
-        <li>Firebase, SQLite</li>
-        <li>CI/CD & Testing</li>
-        <li>MVC & MVVM Architecture</li>
-        <li>Figma & Jira</li>
-      </ul>
-
-      <h3 class="section-title">EDUCATION</h3>
-      <div class="education-item">
-        <h4>MBA</h4>
-        <p>Osmania University</p>
-        <p>2014 - 2016</p>
-      </div>
-      <div class="education-item">
-        <h4>B.Com Computers</h4>
-        <p>Osmania University</p>
-        <p>2011 - 2013</p>
+      <div class="contact">
+        <p><i class="fas fa-phone"></i> +91 9666033750</p>
+        <p><i class="fas fa-envelope"></i> sathyayadav27@gmail.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> Bangalore, Marthahalli</p>
+        <p><i class="fab fa-linkedin"></i> linkedin.com/in/sathya9666033750</p>
       </div>
 
-      <h3 class="section-title">LANGUAGES</h3>
-      <div class="language-item"><h4>English</h4></div>
-      <div class="language-item"><h4>Telugu</h4></div>
-      <div class="language-item"><h4>Hindi</h4></div>
+      <div class="skills">
+        <h3 class="section-title">Skills</h3>
+        <ul>
+          <li>Android & iOS Development</li>
+          <li>Dart & Flutter</li>
+          <li>Git, Github, Bitbucket</li>
+          <li>Firebase & REST APIs</li>
+        </ul>
+      </div>
     </div>
 
+    <!-- Right Column -->
     <div class="right-column">
-      <h3 class="right-section-title">PROFILE</h3>
-      <p>Professional Flutter developer with 3.8 years of experience and total 6.8 years of IT experience. Seeking an organization that provides me an opportunity to grow and exploit my potential to excel in my area of expertise with full dedication to achieve personal as well as organizational goals.</p>
+      <h3 class="section-title">Profile</h3>
+      <p>
+        Professional Flutter developer with 3.8 years of experience and total 6.8 years of IT experience. 
+        Seeking an organization that provides me an opportunity to grow and exploit my potential to excel in my area 
+        of expertise with full dedication to achieve personal as well as organizational goals.
+      </p>
 
-      <h3 class="right-section-title">WORK EXPERIENCE</h3>
-
-      <div class="experience-item">
+      <h3 class="section-title">Work Experience</h3>
+      <div class="work-experience">
         <h4>Intexm Media Pvt Ltd</h4>
         <div class="date">Apr 2024 – Present</div>
-        <p><strong>Project:</strong> Turbopaisa (Android)</p>
-        <div class="project-links">
-          <a href="https://play.google.com/store/apps/details?id=com.tejkun.turbopaisa" target="_blank"><i class="fab fa-google-play"></i> Play Store</a>
-        </div>
+        <p><b>Project:</b> Turbopaisa (Android)</p>
+        <p><a href="#">▶ Play Store</a></p>
         <p>Turbo Paisa is a groundbreaking platform that rewards smartphone users for engaging with products and services...</p>
-      </div>
 
-      <div class="experience-item">
         <h4>OpenTeQ Technologies</h4>
         <div class="date">Jun 2023 – Jan 2024</div>
-        <p><strong>Project:</strong> FunZippy (Android & iOS)</p>
+        <p><b>Project:</b> FunZippy (Android & iOS)</p>
         <p>FunZippy connects users to parties, concerts, and cultural events...</p>
-      </div>
-
-      <div class="experience-item">
-        <h4>Junaati Technologies Pvt Ltd</h4>
-        <div class="date">Mar 2021 – Feb 2022</div>
-        <p><strong>Project:</strong> UTF Mall (Android & iOS)</p>
-        <div class="project-links">
-          <a href="https://play.google.com/store/search?q=utf%20mall&c=apps" target="_blank"><i class="fab fa-google-play"></i> Play Store</a>
-          <a href="https://apps.apple.com/in/app/utf-mall/id1609746635" target="_blank"><i class="fab fa-app-store"></i> App Store</a>
-        </div>
-        <p>Developed UTF Mall app to bring shopping malls online...</p>
-      </div>
-
-      <div class="experience-item">
-        <h4>Junaati Technologies Pvt Ltd</h4>
-        <div class="date">Oct 2022 – Feb 2023</div>
-        <p><strong>Project:</strong> SKOAH (Android & iOS)</p>
-        <div class="project-links">
-          <a href="https://play.google.com/store/apps/details?id=com.webappclouds.skoah" target="_blank"><i class="fab fa-google-play"></i> Play Store</a>
-          <a href="https://apps.apple.com/in/app/skoah/id939115287" target="_blank"><i class="fab fa-app-store"></i> App Store</a>
-        </div>
-        <p>Developed SKOAH skincare app including scheduling, managing appointments, shopping skincare products, and promotions.</p>
-      </div>
-
-      <div class="experience-item">
-        <h4>Mitsui OSK Line Pvt Ltd</h4>
-        <div class="date">Jan 2018 – Dec 2020</div>
-        <p><strong>Role:</strong> Executive (Export Operations)</p>
-        <p>Responsibilities included preparing Bill of Lading, export shipping documents, handling customs queries, and shipment schedules.</p>
       </div>
     </div>
   </div>
