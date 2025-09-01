@@ -15,104 +15,95 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: #f0f2f5;
             color: #333;
             padding: 20px;
             min-height: 100vh;
         }
         
-        .container {
-            max-width: 900px;
+        .resume-container {
+            max-width: 1000px;
             margin: 0 auto;
+            display: flex;
             background: white;
             border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
         
-        header {
-            background: linear-gradient(90deg, #3498db, #2c3e50);
+        .left-column {
+            width: 35%;
+            background: #2c3e50;
             color: white;
             padding: 30px;
+        }
+        
+        .right-column {
+            width: 65%;
+            padding: 30px;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #3498db;
+            margin: 0 auto 20px;
+            display: block;
+            background: #7f8c8d;
+        }
+        
+        .name {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 5px;
             text-align: center;
         }
         
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 5px;
-        }
-        
-        header h2 {
-            font-size: 1.5rem;
-            font-weight: 300;
+        .title {
+            font-size: 18px;
+            color: #3498db;
             margin-bottom: 20px;
+            text-align: center;
         }
         
         .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 15px;
+            margin: 25px 0;
         }
         
         .contact-info div {
             display: flex;
             align-items: center;
-            gap: 8px;
+            margin-bottom: 12px;
         }
         
-        .content {
-            padding: 30px;
+        .contact-info i {
+            width: 24px;
+            margin-right: 10px;
+            color: #3498db;
         }
         
-        section {
-            margin-bottom: 30px;
-        }
-        
-        h3 {
-            color: #2c3e50;
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 25px 0 15px;
+            padding-bottom: 8px;
             border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-            font-size: 1.5rem;
+            color: white;
         }
         
-        .profile p {
-            text-align: justify;
-            font-size: 1.05rem;
-            line-height: 1.8;
-        }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
-        }
-        
-        .skill-category {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #3498db;
-        }
-        
-        .skill-category h4 {
-            margin-bottom: 10px;
-            color: #2c3e50;
-        }
-        
-        .skill-category ul {
+        .skills-list {
             list-style-type: none;
         }
         
-        .skill-category li {
-            padding: 5px 0;
+        .skills-list li {
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
         }
         
-        .skill-category li:before {
+        .skills-list li:before {
             content: "•";
             color: #3498db;
             font-weight: bold;
@@ -123,31 +114,33 @@
         
         .education-item, .language-item {
             margin-bottom: 15px;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
         }
         
         .education-item h4, .language-item h4 {
-            color: #2c3e50;
+            color: #3498db;
             margin-bottom: 5px;
+        }
+        
+        .right-section-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 20px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #2c3e50;
+            color: #2c3e50;
         }
         
         .experience-item {
             margin-bottom: 25px;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            position: relative;
         }
         
         .experience-item h4 {
             color: #2c3e50;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
         
         .date {
-            color: #6c757d;
+            color: #7f8c8d;
             font-style: italic;
             margin-bottom: 10px;
         }
@@ -172,187 +165,134 @@
             text-decoration: underline;
         }
         
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #2c3e50;
-            color: white;
-            font-size: 0.9rem;
-        }
-        
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-            
-            header h2 {
-                font-size: 1.2rem;
-            }
-            
-            .contact-info {
+            .resume-container {
                 flex-direction: column;
-                align-items: center;
-                gap: 10px;
             }
             
-            .skills-grid {
-                grid-template-columns: 1fr;
+            .left-column, .right-column {
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Mekala Satya Narayana</h1>
-            <h2>Flutter Developer</h2>
+    <div class="resume-container">
+        <div class="left-column">
+            <div class="profile-img"></div>
+            <h1 class="name">MEKALA SATYA NARAYANA</h1>
+            <div class="title">FLUTTER DEVELOPER</div>
+            
             <div class="contact-info">
                 <div><i class="fas fa-phone"></i> +91 9666033750</div>
-                <div><i class="fas fa-envelope"></i> <a href="mailto:sathyayadav27@gmail.com" style="color: white;">sathyayadav27@gmail.com</a></div>
+                <div><i class="fas fa-envelope"></i> sathyayadav27@gmail.com</div>
                 <div><i class="fas fa-map-marker-alt"></i> Bangalore, Marthahalli</div>
-                <div><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/sathya9666033750/" target="_blank" style="color: white;">LinkedIn</a></div>
+                <div><i class="fab fa-linkedin"></i> linkedin.com/in/sathya9666033750</div>
             </div>
-        </header>
-        
-        <div class="content">
-            <section class="profile">
-                <h3><i class="fas fa-user"></i> Profile</h3>
-                <p>Having as a professional flutter developer 3.8 years and total experience is 6.8 years, organisation that provides me an opportunity to grow and exploit my potential to excel in the area of my preview with full dedication to achieve personal as well as organisational goal.</p>
-            </section>
             
-            <section class="skills">
-                <h3><i class="fas fa-tools"></i> Skills</h3>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h4>Platforms & Languages</h4>
-                        <ul>
-                            <li>Android & iOS</li>
-                            <li>Dart & Flutter</li>
-                            <li>JSON Parsing</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h4>Tools & Technologies</h4>
-                        <ul>
-                            <li>Git, Github, Bitbucket</li>
-                            <li>RestApi & HTTPS</li>
-                            <li>Figma</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h4>Architecture & State Management</h4>
-                        <ul>
-                            <li>Provider, Bloc, GetX</li>
-                            <li>MVC & MVVM Architecture</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h4>Database & Testing</h4>
-                        <ul>
-                            <li>Firebase, Sqlite, Local Database</li>
-                            <li>CICD, Widget & Unit Testing</li>
-                            <li>SQL & Jira Basics</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+            <h3 class="section-title">SKILLS</h3>
+            <ul class="skills-list">
+                <li>Android & iOS Development</li>
+                <li>Dart & Flutter</li>
+                <li>Git, Github, Bitbucket</li>
+                <li>REST API & JSON</li>
+                <li>Provider, Bloc, GetX</li>
+                <li>Firebase, SQLite</li>
+                <li>CI/CD & Testing</li>
+                <li>MVC & MVVM Architecture</li>
+                <li>Figma & Jira</li>
+            </ul>
             
-            <section class="education">
-                <h3><i class="fas fa-graduation-cap"></i> Education</h3>
-                <div class="education-item">
-                    <h4>MBA</h4>
-                    <p>Osmania University (2014 - 2016)</p>
-                </div>
-                <div class="education-item">
-                    <h4>B.Com Computers</h4>
-                    <p>Osmania University (2011 - 2013)</p>
-                </div>
-            </section>
+            <h3 class="section-title">EDUCATION</h3>
+            <div class="education-item">
+                <h4>MBA</h4>
+                <p>Osmania University</p>
+                <p>2014 - 2016</p>
+            </div>
+            <div class="education-item">
+                <h4>B.Com Computers</h4>
+                <p>Osmania University</p>
+                <p>2011 - 2013</p>
+            </div>
             
-            <section class="languages">
-                <h3><i class="fas fa-language"></i> Languages</h3>
-                <div class="language-item">
-                    <h4>English</h4>
-                </div>
-                <div class="language-item">
-                    <h4>Telugu</h4>
-                </div>
-                <div class="language-item">
-                    <h4>Hindi</h4>
-                </div>
-            </section>
-            
-            <section class="experience">
-                <h3><i class="fas fa-briefcase"></i> Work Experience</h3>
-                
-                <div class="experience-item">
-                    <h4>Intexm Media Pvt Ltd</h4>
-                    <div class="date">Apr 2024 – Present</div>
-                    <p><strong>Project:</strong> Turbopaisa (Android)</p>
-                    <div class="project-links">
-                        <a href="https://play.google.com/store/apps/details?id=com.tejkun.turbopaisa" target="_blank">
-                            <i class="fab fa-google-play"></i> Play Store Link
-                        </a>
-                    </div>
-                    <p>Turbo Paisa is a groundbreaking platform that rewards smartphone users for engaging with products and services. By completing tasks like trying out new apps, taking surveys, or watching videos, users accumulate rewards in the form of virtual currency.</p>
-                    <p><strong>Tools:</strong> Flutter, Dart, Figma, RestApi, JSON, Github, MVVM, Getx</p>
-                    <p><strong>Database:</strong> SharedPreference, Firebase</p>
-                </div>
-                
-                <div class="experience-item">
-                    <h4>OpenTeQ Technologies</h4>
-                    <div class="date">Jun 2023 – Jan 2024</div>
-                    <p><strong>Project:</strong> FunZippy (Android & iOS)</p>
-                    <p>FunZippy connects users to parties, concerts, and cultural events. Provides tools for event discovery and planning.</p>
-                    <p><strong>Tools:</strong> Flutter, Dart, Figma, RestApi, JSON, Github, MVVM, Getx, Provider</p>
-                    <p><strong>Database:</strong> Sqlite, Firebase</p>
-                </div>
-                
-                <div class="experience-item">
-                    <h4>Junaati Technologies Pvt Ltd</h4>
-                    <div class="date">Mar 2021 – Feb 2022</div>
-                    <p><strong>Project:</strong> UTF Mall (Android & iOS)</p>
-                    <div class="project-links">
-                        <a href="https://play.google.com/store/search?q=utf%20mall&c=apps" target="_blank">
-                            <i class="fab fa-google-play"></i> Play Store
-                        </a>
-                        <a href="https://apps.apple.com/in/app/utf-mall/id1609746635" target="_blank">
-                            <i class="fab fa-app-store"></i> App Store
-                        </a>
-                    </div>
-                    <p>Developed UTF Mall app to bring shopping malls online for offers, deals, shops, food courts, and events.</p>
-                </div>
-                
-                <div class="experience-item">
-                    <h4>Junaati Technologies Pvt Ltd</h4>
-                    <div class="date">Oct 2022 – Feb 2023</div>
-                    <p><strong>Project:</strong> SKOAH (Android & iOS)</p>
-                    <div class="project-links">
-                        <a href="https://play.google.com/store/apps/details?id=com.webappclouds.skoah" target="_blank">
-                            <i class="fab fa-google-play"></i> Play Store
-                        </a>
-                        <a href="https://apps.apple.com/in/app/skoah/id939115287" target="_blank">
-                            <i class="fab fa-app-store"></i> App Store
-                        </a>
-                    </div>
-                    <p>Developed SKOAH skincare app including scheduling, managing appointments, shopping skincare products, and promotions.</p>
-                </div>
-                
-                <div class="experience-item">
-                    <h4>Mitsui OSK Line Pvt Ltd</h4>
-                    <div class="date">Jan 2018 – Dec 2020</div>
-                    <p><strong>Role:</strong> Executive (Export Operations)</p>
-                    <p>Responsibilities included preparing Bill of Lading, export shipping documents, handling customs queries, and shipment schedules.</p>
-                </div>
-            </section>
+            <h3 class="section-title">LANGUAGES</h3>
+            <div class="language-item">
+                <h4>English</h4>
+            </div>
+            <div class="language-item">
+                <h4>Telugu</h4>
+            </div>
+            <div class="language-item">
+                <h4>Hindi</h4>
+            </div>
         </div>
         
-        <footer>
-            <p>© 2023 Mekala Satya Narayana | Flutter Developer</p>
-        </footer>
+        <div class="right-column">
+            <h3 class="right-section-title">PROFILE</h3>
+            <p>Professional Flutter developer with 3.8 years of experience and total 6.8 years of IT experience. Seeking an organization that provides me an opportunity to grow and exploit my potential to excel in my area of expertise with full dedication to achieve personal as well as organizational goals.</p>
+            
+            <h3 class="right-section-title">WORK EXPERIENCE</h3>
+            
+            <div class="experience-item">
+                <h4>Intexm Media Pvt Ltd</h4>
+                <div class="date">Apr 2024 – Present</div>
+                <p><strong>Project:</strong> Turbopaisa (Android)</p>
+                <div class="project-links">
+                    <a href="https://play.google.com/store/apps/details?id=com.tejkun.turbopaisa" target="_blank">
+                        <i class="fab fa-google-play"></i> Play Store
+                    </a>
+                </div>
+                <p>Turbo Paisa is a groundbreaking platform that rewards smartphone users for engaging with products and services. By completing tasks like trying out new apps, taking surveys, or watching videos, users accumulate rewards in the form of virtual currency.</p>
+                <p><strong>Tools:</strong> Flutter, Dart, Figma, RestApi, JSON, Github, MVVM, Getx</p>
+                <p><strong>Database:</strong> SharedPreference, Firebase</p>
+            </div>
+            
+            <div class="experience-item">
+                <h4>OpenTeQ Technologies</h4>
+                <div class="date">Jun 2023 – Jan 2024</div>
+                <p><strong>Project:</strong> FunZippy (Android & iOS)</p>
+                <p>FunZippy connects users to parties, concerts, and cultural events. Provides tools for event discovery and planning.</p>
+                <p><strong>Tools:</strong> Flutter, Dart, Figma, RestApi, JSON, Github, MVVM, Getx, Provider</p>
+                <p><strong>Database:</strong> Sqlite, Firebase</p>
+            </div>
+            
+            <div class="experience-item">
+                <h4>Junaati Technologies Pvt Ltd</h4>
+                <div class="date">Mar 2021 – Feb 2022</div>
+                <p><strong>Project:</strong> UTF Mall (Android & iOS)</p>
+                <div class="project-links">
+                    <a href="https://play.google.com/store/search?q=utf%20mall&c=apps" target="_blank">
+                        <i class="fab fa-google-play"></i> Play Store
+                    </a>
+                    <a href="https://apps.apple.com/in/app/utf-mall/id1609746635" target="_blank">
+                        <i class="fab fa-app-store"></i> App Store
+                    </a>
+                </div>
+                <p>Developed UTF Mall app to bring shopping malls online for offers, deals, shops, food courts, and events.</p>
+            </div>
+            
+            <div class="experience-item">
+                <h4>Junaati Technologies Pvt Ltd</h4>
+                <div class="date">Oct 2022 – Feb 2023</div>
+                <p><strong>Project:</strong> SKOAH (Android & iOS)</p>
+                <div class="project-links">
+                    <a href="https://play.google.com/store/apps/details?id=com.webappclouds.skoah" target="_blank">
+                        <i class="fab fa-google-play"></i> Play Store
+                    </a>
+                    <a href="https://apps.apple.com/in/app/skoah/id939115287" target="_blank">
+                        <i class="fab fa-app-store"></i> App Store
+                    </a>
+                </div>
+                <p>Developed SKOAH skincare app including scheduling, managing appointments, shopping skincare products, and promotions.</p>
+            </div>
+            
+            <div class="experience-item">
+                <h4>Mitsui OSK Line Pvt Ltd</h4>
+                <div class="date">Jan 2018 – Dec 2020</div>
+                <p><strong>Role:</strong> Executive (Export Operations)</p>
+                <p>Responsibilities included preparing Bill of Lading, export shipping documents, handling customs queries, and shipment schedules.</p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
