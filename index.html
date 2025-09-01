@@ -47,11 +47,16 @@
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            object-fit: cover;
+            overflow: hidden;
             border: 4px solid #3498db;
             margin: 0 auto 20px;
+        }
+        
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             display: block;
-            background: #7f8c8d;
         }
         
         .name {
@@ -179,7 +184,11 @@
 <body>
     <div class="resume-container">
         <div class="left-column">
-            <div class="profile-img"></div>
+            <!-- Profile Image -->
+            <div class="profile-img">
+                <img src="img.png" alt="Profile Photo">
+            </div>
+
             <h1 class="name">MEKALA SATYA NARAYANA</h1>
             <div class="title">FLUTTER DEVELOPER</div>
             
